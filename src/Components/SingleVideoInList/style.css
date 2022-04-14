@@ -1,0 +1,11 @@
+.single-video-in-list {
+  cursor: pointer;
+  transition: 0.5s;
+}
+.is-selected {
+  background-color: rgba(78, 4, 4, 0.658);
+}
+
+.not-selected:hover {
+  background-color: rgba(78, 4, 4, 0.4);
+}

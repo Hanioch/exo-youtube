@@ -1,0 +1,41 @@
+{
+  "nCommande": 30188,
+  "date": "2/1/2009",
+  "infoClient": {
+    "nClient": "B512",
+    "nom": "Gillet",
+    "adresse": "une adresse quelconque",
+    "localité": "Toulouse"
+  },
+  "infoProduit": [
+    {
+      "nProduit": "cs464",
+      "labellePoduit": "un label",
+      "prix": 220,
+      "qte": 180,
+      "sousTotal": 39600
+    },
+    {
+      "nProduit": "PA45",
+      "labellePoduit": "un label",
+      "prix": 105,
+      "qte": 22,
+      "sousTotal": 2310
+    },
+    {
+      "nProduit": "PA60",
+      "labellePoduit": "un label",
+      "prix": 95,
+      "qte": 70,
+      "sousTotal": 6650
+    },
+    {
+      "nProduit": "PH222",
+      "labellePoduit": "un label",
+      "prix": 230,
+      "qte": 92,
+      "sousTotal": 21160
+    }
+  ],
+  "totalCommande": 69720
+}

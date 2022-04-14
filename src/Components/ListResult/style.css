@@ -1,0 +1,11 @@
+.list-result {
+  height: 85vh;
+  /* background-color: red; */
+  width: 40vw;
+}
+
+.list-video {
+  overflow-y: scroll;
+  height: 85vh;
+  margin: 0;
+}

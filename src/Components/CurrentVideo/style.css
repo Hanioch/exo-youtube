@@ -1,0 +1,13 @@
+.current-video {
+  height: 75vh;
+  width: 60vw;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+}
