@@ -4,23 +4,33 @@ import Footer from "../Footer";
 import SearchBar from "../SearchBar";
 import CurrentVideo from "../CurrentVideo";
 import ListResult from "../ListResult";
-import { getAllVideoBySearch } from "../../API/ApiYoutube";
+import {
+  getAllDescriptionForVideo,
+  getAllVideoBySearch,
+} from "../../API/ApiYoutube";
 
 const ContentPage = () => {
   const [listVideo, setListVideo] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState("");
+  const [description, setDescription] = useState(4);
 
-  const validateSearch = (e, search) => {
+  const validateSearch = async (e, search) => {
     e.preventDefault();
-    getAllVideoBySearch(search).then((res) => {
-      setListVideo(() => res);
-      setSelectedVideo(() => res[0]);
-    });
+    const res = await getAllVideoBySearch(search);
+    setListVideo(() => res);
+    setSelectedVideo(() => res[0]);
+
+    changeDescription(res[0]);
   };
 
-  const changeCurrentVideo = (video) => {
-    console.log("ddd", video);
+  const changeCurrentVideo = async (video) => {
     setSelectedVideo(() => video);
+    changeDescription(video);
+  };
+
+  const changeDescription = async (video) => {
+    const newDescription = await getAllDescriptionForVideo(video.id.videoId);
+    setDescription(newDescription);
   };
 
   return (
@@ -30,7 +40,9 @@ const ContentPage = () => {
         <div className="content-video">
           <SearchBar validateSearch={validateSearch} />
           <div className="current-video">
-            {selectedVideo && <CurrentVideo video={selectedVideo} />}
+            {selectedVideo && (
+              <CurrentVideo video={selectedVideo} description={description} />
+            )}
           </div>
         </div>
         <div className="list-result">
